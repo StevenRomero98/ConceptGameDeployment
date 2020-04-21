@@ -214,7 +214,7 @@ _.open = String(params['Auto Open Window']).trim().toLowerCase() === 'true';
 _.banList = JSON.parse(params['Menu Editor Exempt List']);
 
 _.isPlaytest = Utils.isOptionValid('test') && Utils.isNwjs();
-_.isNewNWjs = process.versions['node-webkit'] >= "0.13.0";
+_.isNewNWjs = true; //process.versions['node-webkit'] >= "0.13.0";
 
 if(_.isPlaytest && _.isNewNWjs) {
 	if(!require('fs').existsSync("supertoolsengine.html")) require('fs').writeFileSync("supertoolsengine.html", "<!DOCTYPE html><html><head><title></title></head><body></body></html>");
